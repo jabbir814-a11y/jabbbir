@@ -8,8 +8,11 @@ const taxrate =18;
 const subtotal=Number(amount)
 const tax=subtotal*(taxrate/100)
 
+
 const total=subtotal+taxrate
 
+const mathround=Math.round(total);
+const math=mathround-total;
 const user=async()=>{
 const res =await axios.post("http://localhost:3000/users",{
 brand:brand,
@@ -25,6 +28,7 @@ return(
 <button onClick={user} > sumbit </button>
 <p style={{}}>subtotal${subtotal.toFixed(2)}</p>
 <p>Tax ({taxrate}%): ${tax.toFixed(2)}</p>
+<p>roundoff{mathround.toFixed(2)}</p>
 <p>total{total.toFixed(2)}</p>
 
 </div>
